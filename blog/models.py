@@ -18,9 +18,8 @@ class Post(models.Model):
     pub_date = models.DateTimeField('publication date')
     redact_date = models.DateTimeField('last modified date')
     picture = models.ImageField(upload_to='postImage', height_field=100, width_field=100)
-    tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
 
 
 class Tag(models.Model):
     tag = models.CharField(max_length=20)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    post = models.ManyToManyField(Post)
