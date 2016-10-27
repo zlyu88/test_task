@@ -12,4 +12,4 @@ class SignUpForm(ModelForm):
 
 class LogIn(forms.Form):
     user_name = forms.CharField(label='Your name', max_length=20)
-    password = forms.CharField(max_length=32)
+    password = forms.CharField(label='Password', max_length=32)
