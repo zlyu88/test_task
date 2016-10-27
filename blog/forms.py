@@ -3,11 +3,11 @@ from django.forms import ModelForm
 
 from .models import Author
 
-
-class SignUpForm(ModelForm):
-    class Meta:
-        model = Author
-        fields = ['user_name', 'email', 'password', 'reg_date', 'picture']
+#
+# class SignUpForm(ModelForm):
+#     class Meta:
+#         model = Author
+#         fields = ['user_name', 'email', 'password', 'reg_date', 'picture']
 
 
 class LogIn(forms.Form):
