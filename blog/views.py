@@ -5,10 +5,10 @@ from .forms import LogIn, SignUp
 
 
 def index(request):
-    return HttpResponse('Hello, world. You\'re at the blog index!!!')
+    return render(request, 'index.html', {})
 
-def startPage(request):
-    return HttpResponse('Log in or sign up')
+# def startPage(request):
+#     return HttpResponse('Log in or sign up')
 
 def logIn(request):
     if request.method == 'POST':
