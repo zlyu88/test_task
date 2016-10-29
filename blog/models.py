@@ -8,7 +8,7 @@ class Author(models.Model):
     email = models.CharField(max_length=20, unique=True)
     password = models.CharField(max_length=32)
     reg_date = models.DateTimeField('registration date')
-    picture = models.ImageField(upload_to='avatars', height_field=50,
+    picture = models.ImageField(upload_to='avatars', default = 'avatars/None/no-img.jpg', height_field=50,
                                 width_field=50, null=True, blank=True)
 
     def __str__(self):

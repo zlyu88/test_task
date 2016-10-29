@@ -23,12 +23,13 @@ def logIn(request):
 
 def signUp(request):
     if request.method == 'POST':
-        form = SignUp(request.POST)
+        form = SignUp(request.POST, request.FILES)
         if form.is_valid():
             author = Author(user_name=form.cleaned_data['user_name'],
                             email=form.cleaned_data['email'],
                             password=form.cleaned_data['password'],
-                            reg_date=datetime.now())
+                            reg_date=datetime.now(),
+                            picture=form.cleaned_data['picture'])
             author.save()
             user_id = author.id
             return HttpResponseRedirect('/blog/user_profile_%s/' % user_id)
@@ -43,4 +44,5 @@ def signUp(request):
 def user_profile(request, user_id):
     user = Author.objects.get(id=user_id)
     name = user.user_name
+    picture = user.picture
     return HttpResponse('User profile %s.' % name)
