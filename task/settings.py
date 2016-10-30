@@ -34,10 +34,13 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    # 'django.contrib.sites',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    # 'registration',
+
 ]
 
 MIDDLEWARE = [
@@ -115,10 +118,66 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# # Registration
+#
+# REGISTRATION_OPEN = True
+#
+#
+# # Logging
+#
+# LOG_FILE = os.path.join(BASE_DIR, 'task.log')
+#
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': True,
+#     'formatters': {
+#         'verbose': {
+#             'format': '%(levelname)s %(asctime)s %(module)s: %(message)s'
+#         },
+#         'simple': {
+#             'format': '%(levelname)s: %(message)s'
+#         },
+#     },
+#     'handlers': {
+#         'null': {
+#             'level': 'DEBUG',
+#             'class': 'logging.NullHandler',
+#         },
+#         'console': {
+#             'level': 'INFO',
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'verbose'
+#         },
+#         'file': {
+#             'level': 'INFO',
+#             'class': 'logging.FileHandler',
+#             'filename': LOG_FILE,
+#             'formatter': 'verbose'
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['null'],
+#             'propagate': True,
+#             'level': 'INFO',
+#         },
+#         'blog.signals': {
+#             'handlers': ['console', 'file'],
+#             'level': 'INFO',
+#         },
+#         'blog.views.contact_admin': {
+#             'handlers': ['console', 'file'],
+#             'level': 'INFO',
+#         }
+#     }
+# }
+#
+# default_app_config = 'blog.apps.BlogAppConfig'

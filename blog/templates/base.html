@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog {% block meta_title %}{% endblock meta_title %}</title>
+    <meta name="description" value="The Adventure Blog" />
+
+    <!-- Include Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+{#    <link rel="stylesheet" href="./css/main.css">#}
+
+{#    {% if user.is_authenticated %}#}
+{##}
+{#    <!-- User's toolbar for authenticated users -->#}
+{#    <div class="col-xs-2" id="user-toolbar">#}
+{#        <span>{{ user.username }}</span> |#}
+{#        <a href="#">Logout</a>#}
+{#    </div>#}
+{##}
+{#    {% else %}#}
+{% block login_bar %}{% endblock login_bar %}
+    <!-- User's toolbar for anonymous users -->
+{#    <div class="col-xs-6" id="user-toolbar">#}
+{#        <a href="login">Log in</a> |#}
+{#        <a href="sign_up">Sign up</a>#}
+{#    </div>#}
+{#    {% endif %}#}
+
+</head>
+<body>
+
+    <!-- Start Container -->
+    <div class="container">
+
+        <!-- Start Header -->
+        <div class="row" id="header">
+
+            <!-- Logo -->
+            <div class="col-xs-8">
+                <h1>The Adventure Blog</h1>
+            </div>
+        </div>
+        <!-- End Header -->
+        <div>{% block main_content %}{% endblock main_content %}</div>
+        <div>{% block tags_line %}{% endblock tags_line %}</div>
+    </div>
+    <!-- End Container -->
+
+    <!-- Start Footer -->
+        <div class="row" id="footer">
+            <div class="col-xs-12">
+                &copy; 2016 The Adventure Blog
+            </div>
+        </div>
+    <!-- End Footer -->
+
+    <!-- Javascripts Section -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <meta name="description" value="The Adventure Blog" />
+
+    <!-- Include Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    {% if user.is_authenticated %}
+
+    <!-- User's toolbar for authenticated users -->
+    <div class="col-xs-2" id="user-toolbar">
+        <span>{{ user.username }}</span> |
+        <a href="#">Logout</a>
+    </div>
+
+    {% else %}
+
+    <!-- User's toolbar for anonymous users -->
+    <div class="col-xs-6" id="user-toolbar">
+        <a href="login">Log in</a> |
+        <a href="sign_up">Sign up</a>
+    </div>
+    {% endif %}
+
+</head>
+<body>
+    <h1>Log in or sign up</h1>
+    <p>Feel free and enjoy</p>
+
+    <!-- Buttons -->
+{#    <div class="col-xs-12" id="content-column">#}
+{#        <a class="btn btn-primary" href="login">Log in</a>#}
+{#        <a class="btn btn-primary" href="sign_up">Sign up</a>#}
+{#    </div>#}
+
+    <!-- Javascripts Section -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>

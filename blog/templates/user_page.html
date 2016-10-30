@@ -13,13 +13,12 @@
 {#        </div>#}
 {#        <!-- End SubHeader -->#}
 {#        {% endblock tags_line %}#}
-
         {% block main_content %}
 
         <!-- Start Registration Bar -->
         {% if login %}
             <div class="col-xs-6" id="user-toolbar">
-                <a href="user_page">{{ user }}</a> |
+                <a href="#">{{ user }}</a> |
                 <a href="log_out">Log out</a>
             </div>
         {% else %}
@@ -37,18 +36,20 @@
 
                 <h2>Posts</h2>
 
+                <!-- Add Post Button -->
+                <a class="btn btn-primary" href="post_add">Add post</a>
 
                 <div>
                     <ul>
-                        <li><img height="300" width="300" src="/static/img/me.jpeg"></li>
                         {% for post in posts %}
-                            <ul><a href="post_page">{{ post.title }}</a></ul>
+                            <ul><a href="#">{{ post.title }}</a></ul>
                                 <li>{{ post.text }}</li>
                                 <li>{{ post.pub_date }}</li>
                                 <br>
                         {% endfor %}
                     </ul>
                 </div>
+
 
                 <!-- Navigation -->
                 <nav>
@@ -68,15 +69,15 @@
         <!-- End Main Page Content -->
         {% endblock main_content %}
 
-        {% block tags_line %}
-        <!-- Start tag_line -->
-        <div class="row" >
-            {% for tag in tags %}
-                <li><a href="#">{{ tags.tag }}</a></li>
-            {% endfor %}
-        </div>
-        <!-- End tag_line -->
-        {% endblock tags_line %}
+{#        {% block tags_line %}#}
+{#        <!-- Start tag_line -->#}
+{#        <div class="row" >#}
+{#            {% for tag in tags %}#}
+{#                <li><a href="#">{{ tags.tag }}</a></li>#}
+{#            {% endfor %}#}
+{#        </div>#}
+{#        <!-- End tag_line -->#}
+{#        {% endblock tags_line %}#}
 
     <!-- Javascripts Section -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>

@@ -21,7 +21,8 @@ class Post(models.Model):
     text = models.TextField()
     pub_date = models.DateTimeField('publication date')
     redact_date = models.DateTimeField('last modified date')
-    picture = models.ImageField(upload_to='postImage', height_field=100, width_field=100)
+    picture = models.ImageField(upload_to='postImage', height_field=100, width_field=100,
+                                null=True, blank=True)
 
     def __str__(self):
         return self.title
