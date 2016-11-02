@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<!-- Start Main Page Content -->
+<div class="col-xs-12">
+
+    <div>
+
+        {% if post.author_id == user.id %}
+
+            {% if user.image %}
+                <a href="/blog/user_page/"><img
+                        height="60" src="/{{ user.image }}"></a>
+            {% else %}
+                <img height="50" src="/static/no_image.png">
+            {% endif %}
+            <h2><a href="/blog/user_page/">{{ user.user_name }} Posts</a></h2>
+
+        {% else %}
+
+            {% if post_author.image %}
+            <img height="60" src="/{{ post_author.image }}">
+            {% else %}
+                <img height="50" src="/static/no_image.png">
+            {% endif %}
+            <h2>{{ post_author.user_name }} Posts</h2>
+
+        {% endif %}
+
+    </div>
+
+    <h3>{{ post.title }}</h3>
+
+    {% if post.picture %}
+        <img height="300" src="/{{ post.picture }}"><br>
+    {% endif %}
+    {{ post.text }}<br>
+    {% if post.pub_date != post.redact_date %}
+        last redact {{ post.redact_date }}<br>
+    {% endif %}
+    posted on {{ post.pub_date }}<br>
+    <mark>
+        {% for tag in tags %}
+            <a href="{% url "tag_posts" tag.id %}">{{ tag.tag }}</a>
+        {% endfor %}
+    </mark>
+    <br>
+
+    {% if post.author_id == user.id %}
+        <p>
+            <a href="{% url "post_edit" post.id %}">Edit</a>|
+            <a href="{% url "post_delete" post.id %}">Delete</a>|
+            <a href="{% url "tag_add" post.id %}">add tag</a>
+        </p>
+    {% endif %}
+    <br><br><br>
+
+</div>
+<!-- End Main Page Content -->
+{% endblock main_content %}

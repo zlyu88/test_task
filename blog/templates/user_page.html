@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<!-- Start Registration Bar -->
+{% if user.user_name %}
+    <div class="col-xs-6" id="user-toolbar">
+        {% if user.image %}
+            <a href="/blog/user_page/"><img height="30" class="img-circle"
+                                            src="/{{ user.image }}"></a>
+        {% else %}
+            <img height="30" src="/static/no_image.png">
+        {% endif %}
+        <a href="/blog/user_page/">{{ user.user_name }}</a> |
+        <a href="/blog/log_out">Log out</a>
+    </div>
+{% else %}
+    <div class="col-xs-6" id="user-toolbar">
+       <a href="/blog/log_in/">Log in</a> |
+       <a href="/blog/sign_up/">Sign up</a>
+    </div>
+{% endif %}
+<!-- End Registration Bar -->
+
+<!-- Start Main Page Content -->
+<div class="col-xs-12">
+
+    <h2>{{ user.user_name }} Posts</h2>
+
+    <!-- Add Post Button -->
+    <a class="btn btn-primary" href="/blog/post_add/">Add post</a>
+
+    <div>
+        <ul>
+            {% for post in posts %}
+                {% if post.author_id == user.id %}
+                    <ul><a href="{% url "post_page" post.id %}"><h4>{{ post.title }}</h4></a></ul>
+                        <li>{% if post.picture %}
+                            <img height="300" src="/{{ post.picture }}"><br>
+                        {% endif %}
+                        {{ post.text }}<br>
+                        {% if post.pub_date != post.redact_date %}
+                            last redact {{ post.redact_date }}<br>
+                        {% endif %}
+                        posted on {{ post.pub_date }}</li>
+                        <br><br><br>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <br><br><br>
+
+    <!-- Navigation -->
+    <nav>
+        <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- End Main Page Content -->
+{% endblock main_content %}

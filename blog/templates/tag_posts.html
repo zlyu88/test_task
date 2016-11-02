@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<!-- Start Registration Bar -->
+{% if user.user_name %}
+    <div class="col-xs-6" id="user-toolbar">
+        {% if user.image %}
+            <a href="/blog/user_page/"><img height="30" class="img-circle"
+                                            src="/{{ user.image }}"></a>
+        {% else %}
+            <img height="30" src="/static/no_image.png">
+        {% endif %}
+        <a href="/blog/user_page/">{{ user.user_name }}</a> |
+        <a href="/blog/log_out">Log out</a>
+    </div>
+{% else %}
+    <div class="col-xs-6" id="user-toolbar">
+       <a href="/blog/log_in/">Log in</a> |
+       <a href="/blog/sign_up/">Sign up</a>
+    </div>
+{% endif %}
+<!-- End Registration Bar -->
+
+<!-- Start Main Page Content -->
+<div class="col-xs-12">
+
+    <h3>Posts with tag '{{ tag.tag }}'</h3>
+
+    <!-- Add Post Button -->
+
+    <div>
+        {% for post in posts %}
+            <ul>
+                {% for user in users %}
+                    {% if post.author_id == user.id %}
+                        {% if user.image %}
+                            <img height="20" src="/{{ user.image }}">
+                        {% else %}
+                            <img height="15" src="/static/no_image.png">
+                        {% endif %}
+                    {%  endif %}
+                {% endfor %}
+
+                <a href="{% url "post_page" post.id %}">{{ post.title }}</a>
+            </ul>
+        {% endfor %}
+    </div>
+    <br><br><br>
+
+    <!-- Navigation -->
+    <nav>
+        <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- End Main Page Content -->
+{% endblock main_content %}

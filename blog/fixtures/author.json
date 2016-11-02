@@ -1,0 +1,13 @@
+[
+  {
+    "model": "models.author",
+    "pk": 1,
+    "fields": {
+      "user_name": "John",
+      "email": "Lennon@beatles.gb",
+      "password": "help",
+      "reg_date": "1.1.78",
+      "is_loged": "0"
+    }
+  }
+]
