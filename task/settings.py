@@ -12,17 +12,27 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4e6d4b6b6ba00630ed7df82a6b542a3c9de17484
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4e6d4b6b6ba00630ed7df82a6b542a3c9de17484
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = 'pxg^o2a2356_lula9t$nm)snt4w+zx=^ni*eh^o$t*0a1d%en)'
+=======
+SECRET_KEY = 'zd518r8x^ljrc*!m)ic_4!4hj^msajqar!p+dem3+ldx4=piz4'
+>>>>>>> 4e6d4b6b6ba00630ed7df82a6b542a3c9de17484
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,10 +46,19 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+<<<<<<< HEAD
+=======
+    # 'django.contrib.sites',
+>>>>>>> 4e6d4b6b6ba00630ed7df82a6b542a3c9de17484
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+<<<<<<< HEAD
+=======
+    # 'registration',
+
+>>>>>>> 4e6d4b6b6ba00630ed7df82a6b542a3c9de17484
 ]
 
 MIDDLEWARE = [
@@ -125,7 +144,65 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
+<<<<<<< HEAD
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'blog/')
 
 MEDIA_URL = '/media/'
+=======
+# # Registration
+#
+# REGISTRATION_OPEN = True
+#
+#
+# # Logging
+#
+# LOG_FILE = os.path.join(BASE_DIR, 'task.log')
+#
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': True,
+#     'formatters': {
+#         'verbose': {
+#             'format': '%(levelname)s %(asctime)s %(module)s: %(message)s'
+#         },
+#         'simple': {
+#             'format': '%(levelname)s: %(message)s'
+#         },
+#     },
+#     'handlers': {
+#         'null': {
+#             'level': 'DEBUG',
+#             'class': 'logging.NullHandler',
+#         },
+#         'console': {
+#             'level': 'INFO',
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'verbose'
+#         },
+#         'file': {
+#             'level': 'INFO',
+#             'class': 'logging.FileHandler',
+#             'filename': LOG_FILE,
+#             'formatter': 'verbose'
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['null'],
+#             'propagate': True,
+#             'level': 'INFO',
+#         },
+#         'blog.signals': {
+#             'handlers': ['console', 'file'],
+#             'level': 'INFO',
+#         },
+#         'blog.views.contact_admin': {
+#             'handlers': ['console', 'file'],
+#             'level': 'INFO',
+#         }
+#     }
+# }
+#
+# default_app_config = 'blog.apps.BlogAppConfig'
+>>>>>>> 4e6d4b6b6ba00630ed7df82a6b542a3c9de17484

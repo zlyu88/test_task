@@ -9,8 +9,12 @@
 <form action="{% url 'log_in' %}" method="post">
     {% csrf_token %}
     {{ form }}
+<<<<<<< HEAD
     <input type="submit" name="submit" value="Submit">
     <input type="submit" name="return" value="Back">
+=======
+    <input type="submit" value="Submit" />
+>>>>>>> 4e6d4b6b6ba00630ed7df82a6b542a3c9de17484
 </form>
 
 </body>

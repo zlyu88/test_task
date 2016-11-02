@@ -8,4 +8,7 @@ class BlogAppConfig(AppConfig):
 
     def ready(self):
         from blog import signals
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4e6d4b6b6ba00630ed7df82a6b542a3c9de17484
