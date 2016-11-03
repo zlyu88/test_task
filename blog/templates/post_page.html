@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-<<<<<<< HEAD
 {% block main_content %}
 
 <!-- Start Main Page Content -->
@@ -60,64 +59,3 @@
 </div>
 <!-- End Main Page Content -->
 {% endblock main_content %}
-=======
-
-{#        {% block tags_line %}#}
-{#        <!-- Start SubHeader -->#}
-{#        <div class="row" id="sub-header">#}
-{#            <div class="col-xs-12">#}
-{#                <ul class="nav nav-tabs" role="tablist">#}
-{#                    <li role="presentation" class="active"><a href="{% url "index" %}">Gory</a></li>#}
-{#                    <li role="presentation"><a href="#">Riky</a></li>#}
-{#                    <li role="presentation"><a href="#">Moria</a></li>#}
-{#                </ul>#}
-{#        </div>#}
-{#        <!-- End SubHeader -->#}
-{#        {% endblock tags_line %}#}
-        {% block main_content %}
-
-        <!-- Start Registration Bar -->
-{#        {% if login %}#}
-{#            <div class="col-xs-6" id="user-toolbar">#}
-{#                <a href="#">{{ user }}</a> |#}
-{#                <a href="log_out">Log out</a>#}
-{#            </div>#}
-{#        {% else %}#}
-{#            <div class="col-xs-6" id="user-toolbar">#}
-{#               <a href="log_in">Log in</a> |#}
-{#               <a href="sign_up">Sign up</a>#}
-{#            </div>#}
-{#        {% endif %}#}
-        <!-- End Registration Bar -->
-
-        <!-- Start Main Page Content -->
-        <div class="row" id="content-columns">
-            <h2>{{ post.title }}</h2>
-            <br>{{ post.text }}
-            <br>{{ post.pub_date }}
-            {% if post.pub_date != post.redact_date %}
-                <p>last redact</p>{{ post.redact_date }}
-            {% endif %}
-
-
-
-        </div>
-        <!-- End Main Page Content -->
-        {% endblock main_content %}
-
-{#        {% block tags_line %}#}
-{#        <!-- Start tag_line -->#}
-{#        <div class="row" >#}
-{#            {% for tag in tags %}#}
-{#                <li><a href="#">{{ tags.tag }}</a></li>#}
-{#            {% endfor %}#}
-{#        </div>#}
-{#        <!-- End tag_line -->#}
-{#        {% endblock tags_line %}#}
-
-    <!-- Javascripts Section -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
-    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-</body>
-</html>
->>>>>>> 4e6d4b6b6ba00630ed7df82a6b542a3c9de17484

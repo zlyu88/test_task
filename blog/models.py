@@ -8,13 +8,8 @@ class Author(models.Model):
     email = models.CharField(max_length=20, unique=True)
     password = models.CharField(max_length=32)
     reg_date = models.DateTimeField('registration date')
-<<<<<<< HEAD
     image = models.ImageField(upload_to='static', null=True, blank=True)
     is_loged = models.BooleanField(default=False)
-=======
-    picture = models.ImageField(upload_to='avatars', default = 'avatars/None/no-img.jpg', height_field=50,
-                                width_field=50, null=True, blank=True)
->>>>>>> 4e6d4b6b6ba00630ed7df82a6b542a3c9de17484
 
     def __str__(self):
         return self.user_name
@@ -26,12 +21,7 @@ class Post(models.Model):
     text = models.TextField()
     pub_date = models.DateTimeField('publication date')
     redact_date = models.DateTimeField('last modified date')
-<<<<<<< HEAD
     picture = models.ImageField(upload_to='static', null=True, blank=True)
-=======
-    picture = models.ImageField(upload_to='postImage', height_field=100, width_field=100,
-                                null=True, blank=True)
->>>>>>> 4e6d4b6b6ba00630ed7df82a6b542a3c9de17484
 
     def __str__(self):
         return self.title
@@ -42,8 +32,4 @@ class Tag(models.Model):
     post = models.ManyToManyField(Post)
 
     def __str__(self):
-<<<<<<< HEAD
         return self.tag
-=======
-        return self.tag
->>>>>>> 4e6d4b6b6ba00630ed7df82a6b542a3c9de17484
