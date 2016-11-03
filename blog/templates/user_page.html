@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-<<<<<<< HEAD
 {% block main_content %}
 
 <!-- Start Registration Bar -->
@@ -67,89 +66,3 @@
 
 <!-- End Main Page Content -->
 {% endblock main_content %}
-=======
-
-{#        {% block tags_line %}#}
-{#        <!-- Start SubHeader -->#}
-{#        <div class="row" id="sub-header">#}
-{#            <div class="col-xs-12">#}
-{#                <ul class="nav nav-tabs" role="tablist">#}
-{#                    <li role="presentation" class="active"><a href="{% url "index" %}">Gory</a></li>#}
-{#                    <li role="presentation"><a href="#">Riky</a></li>#}
-{#                    <li role="presentation"><a href="#">Moria</a></li>#}
-{#                </ul>#}
-{#        </div>#}
-{#        <!-- End SubHeader -->#}
-{#        {% endblock tags_line %}#}
-        {% block main_content %}
-
-        <!-- Start Registration Bar -->
-        {% if login %}
-            <div class="col-xs-6" id="user-toolbar">
-                <a href="#">{{ user }}</a> |
-                <a href="log_out">Log out</a>
-            </div>
-        {% else %}
-            <div class="col-xs-6" id="user-toolbar">
-               <a href="log_in">Log in</a> |
-               <a href="sign_up">Sign up</a>
-            </div>
-        {% endif %}
-        <!-- End Registration Bar -->
-
-        <!-- Start Main Page Content -->
-        <div class="row" id="content-columns">
-
-            <div class="col-xs-12" id="content-column">
-
-                <h2>Posts</h2>
-
-                <!-- Add Post Button -->
-                <a class="btn btn-primary" href="post_add">Add post</a>
-
-                <div>
-                    <ul>
-                        {% for post in posts %}
-                            <ul><a href="#">{{ post.title }}</a></ul>
-                                <li>{{ post.text }}</li>
-                                <li>{{ post.pub_date }}</li>
-                                <br>
-                        {% endfor %}
-                    </ul>
-                </div>
-
-
-                <!-- Navigation -->
-                <nav>
-                    <ul class="pagination">
-                        <li><a href="#">&laquo;</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">&raquo;</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-        </div>
-        <!-- End Main Page Content -->
-        {% endblock main_content %}
-
-{#        {% block tags_line %}#}
-{#        <!-- Start tag_line -->#}
-{#        <div class="row" >#}
-{#            {% for tag in tags %}#}
-{#                <li><a href="#">{{ tags.tag }}</a></li>#}
-{#            {% endfor %}#}
-{#        </div>#}
-{#        <!-- End tag_line -->#}
-{#        {% endblock tags_line %}#}
-
-    <!-- Javascripts Section -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
-    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-</body>
-</html>
->>>>>>> 4e6d4b6b6ba00630ed7df82a6b542a3c9de17484
