@@ -25,11 +25,11 @@
 <!-- Start Main Page Content -->
 <div class="col-xs-12">
 
-    <h3>Posts with tag '{{ tag.tag }}'</h3>
+    <h3>Posts with tag <span>{{ tag.tag }}</span></h3>
 
     <!-- Add Post Button -->
 
-    <div>
+    <div class="post-box">
         {% for post in posts %}
             <ul>
                 {% for user in users %}
@@ -47,7 +47,8 @@
         {% endfor %}
     </div>
     <br><br><br>
-
+</div>
+<div>
     <!-- Navigation -->
     <nav>
         <ul class="pagination">

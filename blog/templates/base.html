@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +9,7 @@
 
     <!-- Include Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link  rel="stylesheet" type="text/css" href={% static "css/style.css" %} />
 
 {% block login_bar %}{% endblock login_bar %}
 
@@ -38,7 +41,7 @@
     <!-- End Footer -->
 
     <!-- Javascripts Section -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
-    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src={% static "js/script.js" %} type="text/javascript"></script>
+
 </body>
 </html>
