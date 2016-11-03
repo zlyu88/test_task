@@ -27,29 +27,32 @@
 
     <h2>{{ user.user_name }} Posts</h2>
 
-    <!-- Add Post Button -->
-    <a class="btn btn-primary" href="/blog/post_add/">Add post</a>
+    <div class="post-box">
 
-    <div>
-        <ul>
-            {% for post in posts %}
-                {% if post.author_id == user.id %}
-                    <ul><a href="{% url "post_page" post.id %}"><h4>{{ post.title }}</h4></a></ul>
-                        <li>{% if post.picture %}
-                            <img height="300" src="/{{ post.picture }}"><br>
-                        {% endif %}
-                        {{ post.text }}<br>
-                        {% if post.pub_date != post.redact_date %}
-                            last redact {{ post.redact_date }}<br>
-                        {% endif %}
-                        posted on {{ post.pub_date }}</li>
-                        <br><br><br>
-                {% endif %}
-            {% endfor %}
-        </ul>
+        <!-- Add Post Button -->
+    <a class="btn btn-primary" href="/blog/post_add/">Add post</a><br><br>
+
+        {% for post in posts %}
+            {% if post.author_id == user.id %}
+                    {% if post.picture %}
+                        <img width="500" src="/{{ post.picture }}"><br>
+                    {% endif %}
+                    <a href="{% url "post_page" post.id %}"><h4>{{ post.title }}</h4></a>
+                    <h5>
+                    {{ post.text }}<br>
+                    <i>
+                    {% if post.pub_date != post.redact_date %}
+                        last redact {{ post.redact_date }}<br>
+                    {% endif %}
+                    posted on {{ post.pub_date }}
+                    </i>
+                    </h5><br><br>
+            {% endif %}
+        {% endfor %}
     </div>
     <br><br><br>
-
+</div>
+<div>
     <!-- Navigation -->
     <nav>
         <ul class="pagination">
@@ -57,8 +60,6 @@
             <li class="active"><a href="#">1</a></li>
             <li><a href="#">2</a></li>
             <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
             <li><a href="#">&raquo;</a></li>
         </ul>
     </nav>
