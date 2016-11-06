@@ -128,7 +128,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'blog/')
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'staticfiles'),
+    os.path.join(BASE_DIR, 'task/staticfiles'),
 )
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
