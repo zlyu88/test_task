@@ -123,7 +123,7 @@ def post_edit(request, pid):
         post.title = request.POST.get('title')
         post.text = request.POST.get('text')
         if request.FILES:
-            post.picture = request.FILES.get('picture', None)
+            post.picture = request.FILES.get('picture')
         post.redact_date = datetime.now()
         post.save()
         user = Author.objects.get(is_loged=True)
@@ -155,7 +155,6 @@ def tag_add(request, pid):
         if form.is_valid():
             post = Post.objects.get(id=pid)
             tag = Tag(tag=form.cleaned_data['tag'])
-            # Tag.objects.get(tag=tag)
             try:
                 Tag.objects.get(tag=tag)
                 tag = Tag.objects.get(tag=tag)
@@ -169,7 +168,6 @@ def tag_add(request, pid):
             tags = post.tag_set.all()
             user = Author.objects.get(is_loged=True)
             context = {'user': user, 'post': post, 'tags': tags}
-            # return render(request, 'post_page.html', context)
             return HttpResponseRedirect('/blog/post_page/%s/' % pid, context)
     else:
         form = TagAdd()
