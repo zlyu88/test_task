@@ -1,0 +1,30 @@
+.post-box {
+    display: inline-block;
+    float: left;
+    width: 45%;
+    box-sizing: border-box;
+}
+
+.post-box h5 {
+    max-width: 500px;
+    overflow: hidden;
+    white-space: inherit ;
+    text-align: justify;
+    text-overflow: ellipsis;
+}
+
+.post-box i {
+    color: lightsteelblue;
+}
+
+
+#but {
+    display: inline-block;
+    float: left;
+}
+
+
+span {
+    color: #2b70ec;
+    font-style: italic;
+}

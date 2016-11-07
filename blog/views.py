@@ -20,6 +20,7 @@ def index(request):
         context = {'posts': posts, 'users': users, 'tags': tags}
         return render(request, 'index.html', context)
 
+
 def log_in(request):
         if request.method == 'POST':
             form = LogIn(request.POST)
