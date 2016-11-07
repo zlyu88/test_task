@@ -38,7 +38,6 @@
                         <img width="500" src="/{{ post.picture }}"><br>
                     {% endif %}
                     <a href="{% url "post_page" post.id %}"><h4>{{ post.title }}</h4></a>
-                    <h5>
                     {{ post.text }}<br>
                     <i>
                     {% if post.pub_date != post.redact_date %}
@@ -46,7 +45,7 @@
                     {% endif %}
                     posted on {{ post.pub_date }}
                     </i>
-                    </h5><br><br>
+                    <br><br>
             {% endif %}
         {% endfor %}
     </div>

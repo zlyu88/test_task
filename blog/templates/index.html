@@ -38,7 +38,7 @@
 
     <div class="post-box">
         {% for post in posts %}
-
+            <div id="pic">
             {% for user in users %}
                 {% if post.author_id == user.id %}
                     {% if user.image %}
@@ -48,16 +48,18 @@
                     {% endif %}
                 {%  endif %}
             {% endfor %}
+            </div>
 
             {% if post.picture %}
                 <img width="500" src="/{{ post.picture }}"><br>
             {% endif %}
 
-            <h3>
+            <div id="text">
+
+                <h3>
                 <a href="{% url "post_page" post.id %}"><h4>{{ post.title }}</h4></a>
             </h3>
 
-            <h5>
             {{ post.text }}<br>
 
             <i>
@@ -67,7 +69,9 @@
 
             published {{ post.pub_date }}
             </i>
-            </h5>
+            </div>
+             <p id="button" onclick="showText(this)">more</p>
+
             <br><br><br>
 
         {% endfor %}

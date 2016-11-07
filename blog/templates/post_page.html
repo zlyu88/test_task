@@ -34,7 +34,6 @@
         <img width="500" src="/{{ post.picture }}"><br>
     {% endif %}
     <h3>{{ post.title }}</h3>
-    <h5>
     {{ post.text }}<br>
     <i>
     {% if post.pub_date != post.redact_date %}
@@ -45,7 +44,6 @@
     {% for tag in tags %}
         <a href="{% url "tag_posts" tag.id %}">{{ tag.tag }}</a>
     {% endfor %}
-    </h5>
 
     <br><br>
 

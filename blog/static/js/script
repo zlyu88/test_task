@@ -1,0 +1,12 @@
+function showText (el) {
+    if(el.previousElementSibling.clientHeight === 110) {
+        el.previousElementSibling.style.height = "100%";
+        el.innerHTML = "less";
+        el.style.color = "grey";
+    } else {
+        el.previousElementSibling.style.height = "110px";
+        el.innerHTML = "more";
+        el.style.color = "#2b70ec";
+    }
+}
+

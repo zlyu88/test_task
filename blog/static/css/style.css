@@ -3,28 +3,39 @@
     float: left;
     width: 45%;
     box-sizing: border-box;
-}
-
-.post-box h5 {
     max-width: 500px;
     overflow: hidden;
-    white-space: inherit ;
+    white-space: inherit;
     text-align: justify;
     text-overflow: ellipsis;
+    position: relative;
 }
 
 .post-box i {
     color: lightsteelblue;
 }
 
-
 #but {
     display: inline-block;
     float: left;
 }
 
-
 span {
     color: #2b70ec;
     font-style: italic;
+}
+
+#text {
+    height: 110px;
+    overflow: hidden;
+}
+
+#button {
+    position: absolute;
+    right: 10px;
+    color: #2b70ec;
+}
+
+#pic {
+    position: static;
 }
