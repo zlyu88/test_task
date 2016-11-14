@@ -9,7 +9,7 @@
             <a href="/blog/user_page/"><img height="30" class="img-circle"
                                             src="/{{ user.image }}"></a>
         {% else %}
-            <img height="30" class="img-circle" src="/static/no_image.png">
+            <img height="30" class="img-circle" src="{% static "no_image.png" %}">
         {% endif %}
         <a href="/blog/user_page/">{{ user.user_name }}</a> |
         <a href="/blog/log_out">Log out</a>
@@ -44,7 +44,7 @@
                     {% if user.image %}
                         <img height="30" src="/{{ user.image }}"> {{ post.author }}
                     {% else %}
-                        <img height="30" src="/static/no_image.png"> {{ post.author }}
+                        <img height="30" src="{% static "no_image.png" %}"> {{ post.author }}
                     {% endif %}
                 {%  endif %}
             {% endfor %}
