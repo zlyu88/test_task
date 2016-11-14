@@ -152,10 +152,3 @@ STATICFILES_DIRS = (
 )
 
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-if CLAYS_ENV == 'dev':
-    STATICFILES_FINDERS = (
-        'django.contrib.staticfiles.finders.FileSystemFinder',
-        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-        'django.contrib.staticfiles.finders.DefaultStorageFinder',
-    )
