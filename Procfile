@@ -1,1 +1,1 @@
-web: gunicorn task.wsgi
+web: gunicorn --chdir task --log-file - task.wsgi:application
