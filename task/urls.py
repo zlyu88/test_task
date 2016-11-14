@@ -20,3 +20,8 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls')),
     url(r'^admin/', admin.site.urls),
 ]
+
+urlpatterns += [
+    url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}, name='logout' ),
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+]
