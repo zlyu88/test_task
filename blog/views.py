@@ -105,8 +105,8 @@ def post_add(request):
             post = Post(author=Author.objects.get(user_name=user.user_name),
                         title=form.cleaned_data['title'],
                         text=form.cleaned_data['text'],
-                        pub_date=datetime.now(),
-                        redact_date=datetime.now(),
+                        pub_date=datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                        redact_date=datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                         picture=request.FILES.get('picture', None))
             post.save()
             posts = Post.objects.order_by('redact_date')[::-1]
@@ -124,7 +124,7 @@ def post_edit(request, pid):
         post.text = request.POST.get('text')
         if request.FILES:
             post.picture = request.FILES.get('picture')
-        post.redact_date = datetime.now()
+        post.redact_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         post.save()
         user = Author.objects.get(is_loged=True)
         context = {'user': user, 'post': post}
